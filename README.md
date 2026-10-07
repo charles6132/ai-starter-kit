@@ -78,3 +78,7 @@ Without it, the vault hooks stay silent.
   can see at a glance what is allowed to leave your computer.
 - **Never install a skill without reading it.** Skills can carry scripts that
   run on your machine. The kit's skill finder audits each one first and asks you.
+
+## Licence
+
+MIT, by Finding Faves. Bundled skills from other authors keep their own MIT licences, credited beside each one.

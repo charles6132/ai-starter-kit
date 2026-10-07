@@ -2,7 +2,7 @@
   "name": "ai-starter-kit",
   "description": "The AI Starter Kit plugin: working habits and skill safety for Claude Code.",
   "owner": {
-    "name": "AI Starter Kit"
+    "name": "Finding Faves"
   },
   "plugins": [
     {

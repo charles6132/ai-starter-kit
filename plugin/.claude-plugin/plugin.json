@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "description": "Habits and safety for Claude Code: reads the handoff inbox at session start, checks for a better skill on every message, syntax-checks every edit, logs sessions, and finds and audits new skills before installing them.",
   "author": {
-    "name": "AI Starter Kit"
-  }
+    "name": "Finding Faves"
+  },
+  "license": "MIT"
 }
