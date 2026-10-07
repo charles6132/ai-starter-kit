@@ -49,7 +49,7 @@ saved beside yours as `*.starter-kit.*` for you to merge.
 
 To install only the plugin, inside Claude Code:
 
-    /plugin marketplace add <this folder, or owner/repo once on GitHub>
+    /plugin marketplace add charles6132/ai-starter-kit
     /plugin install ai-starter-kit@ai-starter-kit
 
 The hooks find your vault through one setting in `~/.claude/settings.json`:
