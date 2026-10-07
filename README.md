@@ -19,24 +19,54 @@ folders and projects.
 | `templates/vault/` | Your Obsidian brain: tiers, session notes, handoffs, projects | Anywhere *not* synced, e.g. `~/Brain` |
 | `templates/project/AGENTS.md` | Rules for one project | The top folder of each project |
 
-Coming next: hooks (small scripts that run automatically), an installer for the
-basic programs, and the skill library packaged as a Claude Code plugin.
+It also contains a Claude Code **plugin** (`plugin/`) with:
+
+- **Four hooks**, small scripts that run automatically:
+  - on starting, show the notes the last session left;
+  - on every message, check for a better skill;
+  - after every edit, check the file still parses;
+  - on closing, log the session.
+- **Skills**: the skill finder, two safety audits (one for skills, one for
+  whole GitHub projects), a debug loop where a fixer and an independent
+  reviewer take turns until a fix is proven, and `/teach`, a guided learning
+  workspace for any new topic (from Matt Pocock's skills, MIT licence).
+
+## Installing
+
+**Windows**, in PowerShell from this folder:
+
+    powershell -ExecutionPolicy Bypass -File .\install.ps1 -YourName "Sam"
+
+**macOS or Linux**, from this folder:
+
+    bash install.sh --name "Sam"
+
+Both install Node.js, Git, Obsidian and Claude Code if they are missing, create
+your vault (default `Brain` in your home folder; choose another with
+`-VaultPath` or `--vault`), write the rules and settings, and install the
+plugin. They never overwrite a file you already have: the kit's version is
+saved beside yours as `*.starter-kit.*` for you to merge.
+
+To install only the plugin, inside Claude Code:
+
+    /plugin marketplace add <this folder, or owner/repo once on GitHub>
+    /plugin install ai-starter-kit@ai-starter-kit
+
+The hooks find your vault through one setting in `~/.claude/settings.json`:
+`"env": { "AI_KIT_VAULT": "<path to your vault>" }`. The installer writes it.
+Without it, the vault hooks stay silent.
 
 ## Setting it up by hand
 
 1. Install Node.js, Git, Obsidian and Claude Code.
 2. Copy `templates/vault/` to a folder that is **not** inside OneDrive,
-   Dropbox, iCloud, Documents or Desktop. Those sync automatically and would
-   upload your `private/` folder. Open that folder in Obsidian as a vault.
-3. Copy `templates/claude/CLAUDE.md` and `settings.json` into your `.claude`
-   folder (in your home folder). If you already have files there, merge rather
-   than overwrite.
-4. In every copied file, replace each `{{PLACEHOLDER}}`:
-   - `{{YOUR_NAME}}`: what agents should call you.
-   - `{{VAULT}}`: the full path to your vault, e.g. `C:/Users/you/Brain`.
-5. Start Claude Code and say: "read my CLAUDE.md and tell me what you will do
-   at the start of each session". If it describes reading the handoff folder
-   and the vault rules, it worked.
+   Dropbox, iCloud, Documents or Desktop, and open it in Obsidian as a vault.
+3. Copy `templates/claude/CLAUDE.md` and `settings.json` into the `.claude`
+   folder in your home folder, and `templates/AGENTS.md` into your home folder.
+   Merge with anything already there rather than overwriting it.
+4. In every copied file, replace `{{YOUR_NAME}}` with what agents should call
+   you and `{{VAULT}}` with the full path to your vault.
+5. Install the plugin as above.
 
 ## The ideas behind it
 

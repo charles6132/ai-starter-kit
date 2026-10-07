@@ -1,4 +1,7 @@
 {
+  "env": {
+    "AI_KIT_VAULT": "{{VAULT}}"
+  },
   "permissions": {
     "allow": [
       "Read",
