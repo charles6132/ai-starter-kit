@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "Read",
+      "Glob",
+      "Grep",
+      "WebSearch",
+      "WebFetch",
+      "Edit({{VAULT}}/**)",
+      "Bash(ls *)",
+      "Bash(cat *)",
+      "Bash(head *)",
+      "Bash(tail *)",
+      "Bash(grep *)",
+      "Bash(find *)",
+      "Bash(wc *)",
+      "Bash(diff *)",
+      "Bash(git status *)",
+      "Bash(git log *)",
+      "Bash(git diff *)"
+    ]
+  }
+}
